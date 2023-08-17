@@ -1,0 +1,529 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1320E4252A5ED81A003EABCA /* apivpncore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 246182E7292F6365006962D7 /* apivpncore.xcframework */; };
+		1320E4262A5ED81A003EABCA /* apivpncore.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 246182E7292F6365006962D7 /* apivpncore.xcframework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		24286F6029392DE600ED6C41 /* ApiVPNTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24286F5F29392DE600ED6C41 /* ApiVPNTests.swift */; };
+		24286F6129392DE600ED6C41 /* ApiVPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2461828D292DE894006962D7 /* ApiVPN.framework */; };
+		24286F682939456100ED6C41 /* cacert.pem in Resources */ = {isa = PBXBuildFile; fileRef = 24286F672939456000ED6C41 /* cacert.pem */; };
+		24286F6A293949A100ED6C41 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24286F69293949A100ED6C41 /* Constants.swift */; };
+		245119A3296AD93B005DDF91 /* site.dat in Resources */ = {isa = PBXBuildFile; fileRef = 245119A1296AD93B005DDF91 /* site.dat */; };
+		245119A4296AD93B005DDF91 /* geo.mmdb in Resources */ = {isa = PBXBuildFile; fileRef = 245119A2296AD93B005DDF91 /* geo.mmdb */; };
+		24618292292DE894006962D7 /* ApiVPN.docc in Sources */ = {isa = PBXBuildFile; fileRef = 24618291292DE894006962D7 /* ApiVPN.docc */; };
+		24618293292DE894006962D7 /* ApiVPN.h in Headers */ = {isa = PBXBuildFile; fileRef = 24618290292DE894006962D7 /* ApiVPN.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2461829A292DE8A1006962D7 /* ApiVPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24618299292DE8A1006962D7 /* ApiVPN.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		24286F6229392DE600ED6C41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24618284292DE894006962D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2461828C292DE894006962D7;
+			remoteInfo = ApiVPN;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1320E4272A5ED81A003EABCA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1320E4262A5ED81A003EABCA /* apivpncore.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		24286F5D29392DE600ED6C41 /* ApiVPNTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApiVPNTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		24286F5F29392DE600ED6C41 /* ApiVPNTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiVPNTests.swift; sourceTree = "<group>"; };
+		24286F672939456000ED6C41 /* cacert.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cacert.pem; sourceTree = "<group>"; };
+		24286F69293949A100ED6C41 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		245119A1296AD93B005DDF91 /* site.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = site.dat; sourceTree = "<group>"; };
+		245119A2296AD93B005DDF91 /* geo.mmdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = geo.mmdb; sourceTree = "<group>"; };
+		2461828D292DE894006962D7 /* ApiVPN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApiVPN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24618290292DE894006962D7 /* ApiVPN.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApiVPN.h; sourceTree = "<group>"; };
+		24618291292DE894006962D7 /* ApiVPN.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = ApiVPN.docc; sourceTree = "<group>"; };
+		24618299292DE8A1006962D7 /* ApiVPN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiVPN.swift; sourceTree = "<group>"; };
+		246182E7292F6365006962D7 /* apivpncore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = apivpncore.xcframework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		24286F5A29392DE600ED6C41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24286F6129392DE600ED6C41 /* ApiVPN.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2461828A292DE894006962D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1320E4252A5ED81A003EABCA /* apivpncore.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		24286F5E29392DE600ED6C41 /* ApiVPNTests */ = {
+			isa = PBXGroup;
+			children = (
+				24286F5F29392DE600ED6C41 /* ApiVPNTests.swift */,
+			);
+			path = ApiVPNTests;
+			sourceTree = "<group>";
+		};
+		24618283292DE894006962D7 = {
+			isa = PBXGroup;
+			children = (
+				246182E7292F6365006962D7 /* apivpncore.xcframework */,
+				2461828F292DE894006962D7 /* ApiVPN */,
+				24286F5E29392DE600ED6C41 /* ApiVPNTests */,
+				2461828E292DE894006962D7 /* Products */,
+				246182D6292F4C51006962D7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2461828E292DE894006962D7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2461828D292DE894006962D7 /* ApiVPN.framework */,
+				24286F5D29392DE600ED6C41 /* ApiVPNTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2461828F292DE894006962D7 /* ApiVPN */ = {
+			isa = PBXGroup;
+			children = (
+				245119A2296AD93B005DDF91 /* geo.mmdb */,
+				245119A1296AD93B005DDF91 /* site.dat */,
+				24286F672939456000ED6C41 /* cacert.pem */,
+				24618290292DE894006962D7 /* ApiVPN.h */,
+				24618291292DE894006962D7 /* ApiVPN.docc */,
+				24618299292DE8A1006962D7 /* ApiVPN.swift */,
+				24286F69293949A100ED6C41 /* Constants.swift */,
+			);
+			path = ApiVPN;
+			sourceTree = "<group>";
+		};
+		246182D6292F4C51006962D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		24618288292DE894006962D7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24618293292DE894006962D7 /* ApiVPN.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		24286F5C29392DE600ED6C41 /* ApiVPNTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24286F6429392DE600ED6C41 /* Build configuration list for PBXNativeTarget "ApiVPNTests" */;
+			buildPhases = (
+				24286F5929392DE600ED6C41 /* Sources */,
+				24286F5A29392DE600ED6C41 /* Frameworks */,
+				24286F5B29392DE600ED6C41 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				24286F6329392DE600ED6C41 /* PBXTargetDependency */,
+			);
+			name = ApiVPNTests;
+			productName = ApiVPNTests;
+			productReference = 24286F5D29392DE600ED6C41 /* ApiVPNTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2461828C292DE894006962D7 /* ApiVPN */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24618296292DE894006962D7 /* Build configuration list for PBXNativeTarget "ApiVPN" */;
+			buildPhases = (
+				24618288292DE894006962D7 /* Headers */,
+				24618289292DE894006962D7 /* Sources */,
+				2461828A292DE894006962D7 /* Frameworks */,
+				2461828B292DE894006962D7 /* Resources */,
+				1320E4272A5ED81A003EABCA /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ApiVPN;
+			productName = ApiVPN;
+			productReference = 2461828D292DE894006962D7 /* ApiVPN.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		24618284292DE894006962D7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					24286F5C29392DE600ED6C41 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					2461828C292DE894006962D7 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+				};
+			};
+			buildConfigurationList = 24618287292DE894006962D7 /* Build configuration list for PBXProject "ApiVPN" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 24618283292DE894006962D7;
+			productRefGroup = 2461828E292DE894006962D7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2461828C292DE894006962D7 /* ApiVPN */,
+				24286F5C29392DE600ED6C41 /* ApiVPNTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		24286F5B29392DE600ED6C41 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2461828B292DE894006962D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				245119A4296AD93B005DDF91 /* geo.mmdb in Resources */,
+				245119A3296AD93B005DDF91 /* site.dat in Resources */,
+				24286F682939456100ED6C41 /* cacert.pem in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		24286F5929392DE600ED6C41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24286F6029392DE600ED6C41 /* ApiVPNTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24618289292DE894006962D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24618292292DE894006962D7 /* ApiVPN.docc in Sources */,
+				2461829A292DE8A1006962D7 /* ApiVPN.swift in Sources */,
+				24286F6A293949A100ED6C41 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		24286F6329392DE600ED6C41 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2461828C292DE894006962D7 /* ApiVPN */;
+			targetProxy = 24286F6229392DE600ED6C41 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		24286F6529392DE600ED6C41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3CH26T4C3U;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.apivpn.ios.ApiVPNTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		24286F6629392DE600ED6C41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3CH26T4C3U;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.apivpn.ios.ApiVPNTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		24618294292DE894006962D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = arm64;
+				"EXCLUDED_ARCHS[sdk=*]" = "";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		24618295292DE894006962D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=*]" = arm64;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		24618297292DE894006962D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = G7Z8P464C5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.apivpn.ios.ApiVPN;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		24618298292DE894006962D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = G7Z8P464C5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.apivpn.ios.ApiVPN;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		24286F6429392DE600ED6C41 /* Build configuration list for PBXNativeTarget "ApiVPNTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24286F6529392DE600ED6C41 /* Debug */,
+				24286F6629392DE600ED6C41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24618287292DE894006962D7 /* Build configuration list for PBXProject "ApiVPN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24618294292DE894006962D7 /* Debug */,
+				24618295292DE894006962D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24618296292DE894006962D7 /* Build configuration list for PBXNativeTarget "ApiVPN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24618297292DE894006962D7 /* Debug */,
+				24618298292DE894006962D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 24618284292DE894006962D7 /* Project object */;
+}
