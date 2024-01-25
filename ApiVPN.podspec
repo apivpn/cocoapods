@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
   spec.author    = "apiVPN"
   spec.swift_versions = "5.8"
   spec.ios.deployment_target = "12.1"
-  spec.osx.deployment_target = "13.0"
+  #spec.osx.deployment_target = "13.0"
   spec.source       = { :git => "https://github.com/apivpn/cocoapods.git", :tag => "#{spec.version}" }
   spec.source_files  = "ApiVPN/**/*.{swift,h}"
   spec.resources = ["ApiVPN/cacert.pem", "ApiVPN/geo.mmdb", "ApiVPN/site.dat"]
