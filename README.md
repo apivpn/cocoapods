@@ -14,7 +14,7 @@ To use the library via CocoaPods, you can include something similar to the follo
 platform :ios, '12.1'
 
 def common_pods
-  pod 'ApiVPN', :git => 'git@git.sly.team:apivpnsdk/apivpn-ios.git', :tag => '0.0.2'
+  pod 'ApiVPN'
 end
 
 target 'apivpn-ios-example' do
@@ -25,6 +25,3 @@ target 'apiVPNTunnel' do
   common_pods
 end
 ```
-# cocoapods
-# cocoapods
-# cocoapods
