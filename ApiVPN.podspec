@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
   spec.homepage     = "https://apivpn.io"
   spec.license      = { :type => 'MIT', :file => 'LICENSE.md' }
   spec.author    = "apiVPN"
-  spec.swift_versions = "5.8"
+  spec.swift_versions = "5"
   spec.ios.deployment_target = "12.1"
   #spec.osx.deployment_target = "13.0"
   spec.source       = { :git => "https://github.com/apivpn/cocoapods.git", :tag => "#{spec.version}" }

@@ -21,6 +21,7 @@ public enum ApiVpnError: Error {
     case VpnStart
     case NotInitialized
     case WriteMetadata
+    case VpnNotStarted
 }
 
 extension ApiVpnError {
@@ -38,6 +39,8 @@ extension ApiVpnError {
             return .NotInitialized
         case 6:
             return .WriteMetadata
+        case 7:
+            return .VpnNotStarted
         default:
             return .Unknown
         }
@@ -48,6 +51,7 @@ public typealias VpnInitCompletionHandler = (ApiVpnError?) -> Void
 public typealias ServersCompletionHandler = (Servers?, ApiVpnError?) -> Void
 public typealias StartV2RayCompletionHandler = (ApiVpnError?) -> Void
 public typealias ConnectionLogFileCompletionHandler = (String?, ApiVpnError?) -> Void
+public typealias GetGlobalStatisticsCompletionHandler = (GlobalStatistics?, ApiVpnError?) -> Void
 
 public struct Country: Decodable {
     public let code: String
@@ -69,9 +73,21 @@ public struct Server: Decodable {
     public let sort: Int32
     public let pin: Bool
     public let group_id: Int32?
+    public let ping: UInt32?
 }
 
 public typealias Servers = [Server]
+
+public struct GlobalStatistics: Decodable {
+    public let total_proxy_bytes_recvd: UInt64
+    public let total_proxy_bytes_sent: UInt64
+    public let proxy_bytes_recvd_per_second: UInt64
+    public let proxy_bytes_sent_per_second: UInt64
+    public let total_nonproxy_bytes_recvd: UInt64
+    public let total_nonproxy_bytes_sent: UInt64
+    public let nonproxy_bytes_recvd_per_second: UInt64
+    public let nonproxy_bytes_sent_per_second: UInt64
+}
 
 public class ApiVpn {
     public static let shared: ApiVpn = {
@@ -107,12 +123,12 @@ public class ApiVpn {
         }
     }
     
-    public func servers(_ completionHandler: @escaping ServersCompletionHandler) {
+    public func servers(_ ping: Bool, _ completionHandler: @escaping ServersCompletionHandler) {
         DispatchQueue.global().async {
-            let ptr = apivpn_servers()
+            let ptr = apivpn_servers(ping)
             if let ptr = ptr {
                 let serialized = String(cString: ptr)
-                apivpn_servers_free(ptr)
+                apivpn_free_string(ptr)
                 do {
                     if let jsonData = serialized.data(using: .utf8) {
                         let servers = try JSONDecoder().decode(Servers.self, from: jsonData)
@@ -129,12 +145,35 @@ public class ApiVpn {
         }
     }
     
+    public func get_global_statistics(_ completionHandler: @escaping GetGlobalStatisticsCompletionHandler) {
+        DispatchQueue.global().async {
+            let ptr = apivpn_get_global_statistics()
+            if let ptr = ptr {
+                let serialized = String(cString: ptr)
+                apivpn_free_string(ptr)
+                do {
+                    if let jsonData = serialized.data(using: .utf8) {
+                        let stats = try JSONDecoder().decode(GlobalStatistics.self, from: jsonData)
+                        completionHandler(stats, nil)
+                    } else {
+                        completionHandler(nil, ApiVpnError.InvalidJSONObject)
+                    }
+                } catch {
+                    completionHandler(nil, ApiVpnError.InvalidJSONObject)
+                }
+            } else {
+                completionHandler(nil, ApiVpnError.from_errno(apivpn_last_error()))
+            }
+        }
+    }
+
+
     public func connection_log_file(_ completionHandler: @escaping ConnectionLogFileCompletionHandler) {
         DispatchQueue.global().async {
             let ptr = apivpn_get_connection_log_file()
             if let ptr = ptr {
                 let path = String(cString: ptr)
-                apivpn_servers_free(ptr)
+                apivpn_free_string(ptr)
                 completionHandler(path, nil)
             } else {
                 completionHandler(nil, ApiVpnError.from_errno(apivpn_last_error()))
