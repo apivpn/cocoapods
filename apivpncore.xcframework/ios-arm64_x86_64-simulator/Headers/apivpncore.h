@@ -19,15 +19,66 @@ int32_t apivpn_last_error(void);
 int32_t apivpn_init(const char *app_token, const char *api_server, const char *data_dir);
 
 /**
- * Returns a list of available servers as a serialized JSON string. The returned
- * string must be freed by calling `apivpn_servers_free`.
+ * Returns a list of available servers as a serialized JSON string.
+ *
+ * When `ping` is true, the returned servers would contain a non-NULL ping value, 0
+ * ping indicates a timeout, when `ping` is false, a NULL ping value would be set.
+ *
+ * Default ping timeout is 1500 ms.
+ *
+ * The returned string must be freed by calling `apivpn_free_string`.
+ *
+ * JSON example
+ *
+ * [
+ *     {
+ *         "id": 222,
+ *         "ip": "167.172.34.98",
+ *         "exit": "167.172.34.98",
+ *         "name": "Amsterdam",
+ *         "icon": "/flags/NL.png",
+ *         "hostname": "nl1.exotic-coffee.net",
+ *         "location": "Amsterdam",
+ *         "latitude": 0.0,
+ *         "longitude": 0.0,
+ *         "premium": true,
+ *         "country": {
+ *             "code": "NL",
+ *             "name": "The Netherlands"
+ *         },
+ *         "sort": 0,
+ *         "pin": false,
+ *         "group_id": null,
+ *         "ping": 120
+ *     }
+ * ]
  */
-char *apivpn_servers(void);
+char *apivpn_servers(bool ping);
 
 /**
- * Frees string allocated by `apivpn_servers`.
+ * Returns global statistics as JSON.
+ *
+ * JSON example
+ *
+ * {
+ *     "total_proxy_bytes_recvd": 2743405,
+ *     "total_proxy_bytes_sent": 663,
+ *     "proxy_bytes_recvd_per_second": 548681,
+ *     "proxy_bytes_sent_per_second": 67,
+ *     "total_nonproxy_bytes_recvd": 0,
+ *     "total_nonproxy_bytes_sent": 0,
+ *     "nonproxy_bytes_recvd_per_second": 0,
+ *     "nonproxy_bytes_sent_per_second": 0
+ * }
+ *
+ * The returned string must be freed by calling `apivpn_free_string`.
  */
-void apivpn_servers_free(char *p);
+char *apivpn_get_global_statistics(void);
+
+/**
+ * Frees string allocated by the lib.
+ */
+void apivpn_free_string(char *p);
 
 /**
  * Returns the path to the connection log file.
