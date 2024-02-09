@@ -32,24 +32,34 @@ int32_t apivpn_init(const char *app_token, const char *api_server, const char *d
  *
  * [
  *     {
- *         "id": 222,
- *         "ip": "167.172.34.98",
- *         "exit": "167.172.34.98",
- *         "name": "Amsterdam",
- *         "icon": "/flags/NL.png",
- *         "hostname": "nl1.exotic-coffee.net",
- *         "location": "Amsterdam",
- *         "latitude": 0.0,
- *         "longitude": 0.0,
+ *         "id": 227,
+ *         "ip": "216.238.80.197",
+ *         "exit": "216.238.80.197",
+ *         "name": "El Marques",
+ *         "icon": "/flags/MX.png",
+ *         "hostname": "mx1-dvpn.apivpn.dev",
+ *         "location": "Mexico",
+ *         "latitude": 39.9643,
+ *         "longitude": -75.1444,
  *         "premium": true,
  *         "country": {
- *             "code": "NL",
- *             "name": "The Netherlands"
+ *             "code": "MX",
+ *             "name": "Mexico"
  *         },
  *         "sort": 0,
  *         "pin": false,
  *         "group_id": null,
- *         "ping": 120
+ *         "group": [
+ *             {
+ *                 "name": "residential"
+ *             }
+ *         ],
+ *         "tag": [
+ *             {
+ *                 "name": "ws"
+ *             }
+ *         ],
+ *         "ping": 33
  *     }
  * ]
  */

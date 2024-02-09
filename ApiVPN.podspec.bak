@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "ApiVPN"
-  spec.version      = "0.1.2"
+  spec.version      = "0.1.3"
   spec.summary      = "apiVPN SDK"
   spec.description  = <<-DESC
                       api:VPN White Label Solutions SDK
