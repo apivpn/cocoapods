@@ -58,6 +58,10 @@ public struct Country: Decodable {
     public let name: String
 }
 
+public struct Tag: Decodable {
+    public let name: String
+}
+
 public struct Server: Decodable {
     public let id: Int32
     public let ip: String
@@ -74,6 +78,7 @@ public struct Server: Decodable {
     public let pin: Bool
     public let group_id: Int32?
     public let ping: UInt32?
+    public let tag: Tag
 }
 
 public typealias Servers = [Server]
