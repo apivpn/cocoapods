@@ -9,6 +9,12 @@
 int32_t apivpn_last_error(void);
 
 /**
+ * Starts the TON proxy. The TON proxy must be started to make network requests to
+ * the API server.
+ */
+void apivpn_start_ton_proxy(void);
+
+/**
  * Initializes the SDK with an application token, an API server address and a
  * writable metadata folder. The SDK must be successfully initialized to call any
  * subsequent functions.

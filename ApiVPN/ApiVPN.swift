@@ -48,6 +48,7 @@ extension ApiVpnError {
 }
 
 public typealias VpnInitCompletionHandler = (ApiVpnError?) -> Void
+public typealias StartTonProxyCompletionHandler = () -> Void
 public typealias ServersCompletionHandler = (Servers?, ApiVpnError?) -> Void
 public typealias StartV2RayCompletionHandler = (ApiVpnError?) -> Void
 public typealias ConnectionLogFileCompletionHandler = (String?, ApiVpnError?) -> Void
@@ -113,6 +114,13 @@ public class ApiVpn {
             }
         }
         return nil
+    }
+    
+    public func start_ton_proxy( _ completionHandler: @escaping StartTonProxyCompletionHandler) {
+        DispatchQueue.global().async {
+            apivpn_start_ton_proxy()
+            completionHandler()
+        }
     }
     
     public func initialize(_ appToken: String, _ apiServer: String, _ dataDir: String, _ completionHandler: @escaping VpnInitCompletionHandler) {
