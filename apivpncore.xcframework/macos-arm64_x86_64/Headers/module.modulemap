@@ -1,4 +1,0 @@
-module apivpncore {
-  header "apivpncore.h"
-  export *
-}
