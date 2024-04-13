@@ -54,20 +54,20 @@ public typealias StartV2RayCompletionHandler = (ApiVpnError?) -> Void
 public typealias ConnectionLogFileCompletionHandler = (String?, ApiVpnError?) -> Void
 public typealias GetGlobalStatisticsCompletionHandler = (GlobalStatistics?, ApiVpnError?) -> Void
 
-public struct Country: Decodable {
+public struct Country: Decodable, Encodable {
     public let code: String
     public let name: String
 }
 
-public struct ServerGroup: Decodable {
+public struct ServerGroup: Decodable, Encodable {
     public let name: String
 }
 
-public struct ServerTag: Decodable {
+public struct ServerTag: Decodable, Encodable {
     public let name: String
 }
 
-public struct Server: Decodable {
+public struct Server: Decodable, Encodable {
     public let id: Int32
     public let ip: String
     public let exit: String
@@ -89,7 +89,7 @@ public struct Server: Decodable {
 
 public typealias Servers = [Server]
 
-public struct GlobalStatistics: Decodable {
+public struct GlobalStatistics: Decodable, Encodable {
     public let total_proxy_bytes_recvd: UInt64
     public let total_proxy_bytes_sent: UInt64
     public let proxy_bytes_recvd_per_second: UInt64
