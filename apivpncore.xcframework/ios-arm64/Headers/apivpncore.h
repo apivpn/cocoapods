@@ -12,17 +12,40 @@ int32_t apivpn_last_error(void);
  * Starts the TON proxy. The TON proxy must be started to make network requests to
  * the API server.
  */
-void apivpn_start_ton_proxy(void);
+int32_t apivpn_start_ton_proxy(void);
 
 /**
- * Initializes the SDK with an application token, an API server address and a
- * writable metadata folder. The SDK must be successfully initialized to call any
- * subsequent functions.
- *
- * If an empty string has specified as the API server address, the default server
- * `api.devop.pw` will apply.
+ * Stops the TON proxy.
  */
-int32_t apivpn_init(const char *app_token, const char *api_server, const char *data_dir);
+void apivpn_stop_ton_proxy(void);
+
+/**
+ * Gets the TON proxy listening port. Returns 0 if TON proxy is not started.
+ */
+uint16_t apivpn_get_ton_proxy_listening_port(void);
+
+/**
+ * Sets the TON proxy server address.
+ */
+int32_t apivpn_set_ton_proxy_address(const char *addr);
+
+/**
+ * Sets whether to use TON proxy for API requests.
+ */
+void apivpn_set_is_use_ton_proxy(bool v);
+
+/**
+ * Sets the API server address.
+ *
+ * Default `https://api.devop.pw`
+ */
+void apivpn_set_api_server(const char *api_server);
+
+/**
+ * Initializes the SDK with an application token and a writable metadata folder.
+ * The SDK must be successfully initialized to call any subsequent functions.
+ */
+int32_t apivpn_init(const char *app_token, const char *data_dir);
 
 /**
  * Returns a list of available servers as a serialized JSON string.

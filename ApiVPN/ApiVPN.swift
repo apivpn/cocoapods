@@ -22,6 +22,17 @@ public enum ApiVpnError: Error {
     case NotInitialized
     case WriteMetadata
     case VpnNotStarted
+    case TonProxyNotSet
+    case BadApiResponse
+    case BadUrl
+    case Request
+    case NoOutbound
+    case BadVMessConfig
+    case BadAppToken
+    case TonStart
+    case TonStarted
+    case TonStarting
+    case BadSocketAddress
 }
 
 extension ApiVpnError {
@@ -41,6 +52,28 @@ extension ApiVpnError {
             return .WriteMetadata
         case 7:
             return .VpnNotStarted
+        case 8:
+            return .TonProxyNotSet
+        case 9:
+            return .BadApiResponse
+        case 10:
+            return .BadUrl
+        case 11:
+            return .Request
+        case 12:
+            return .NoOutbound
+        case 13:
+            return .BadVMessConfig
+        case 14:
+            return .BadAppToken
+        case 15:
+            return .TonStart
+        case 16:
+            return .TonStarted
+        case 17:
+            return .TonStarting
+        case 18:
+            return .BadSocketAddress
         default:
             return .Unknown
         }
@@ -48,7 +81,8 @@ extension ApiVpnError {
 }
 
 public typealias VpnInitCompletionHandler = (ApiVpnError?) -> Void
-public typealias StartTonProxyCompletionHandler = () -> Void
+public typealias StartTonProxyCompletionHandler = (ApiVpnError?) -> Void
+public typealias StopTonProxyCompletionHandler = () -> Void
 public typealias ServersCompletionHandler = (Servers?, ApiVpnError?) -> Void
 public typealias StartV2RayCompletionHandler = (ApiVpnError?) -> Void
 public typealias ConnectionLogFileCompletionHandler = (String?, ApiVpnError?) -> Void
@@ -118,12 +152,39 @@ public class ApiVpn {
     
     public func start_ton_proxy( _ completionHandler: @escaping StartTonProxyCompletionHandler) {
         DispatchQueue.global().async {
-            apivpn_start_ton_proxy()
+            let err = apivpn_start_ton_proxy()
+            if err == 0 {
+                completionHandler(nil)
+            } else {
+                completionHandler(ApiVpnError.from_errno(err))
+            }
+        }
+    }
+    
+    public func stop_ton_proxy( _ completionHandler: @escaping StopTonProxyCompletionHandler) {
+        DispatchQueue.global().async {
+            apivpn_stop_ton_proxy()
             completionHandler()
         }
     }
     
-    public func initialize(_ appToken: String, _ apiServer: String, _ dataDir: String, _ completionHandler: @escaping VpnInitCompletionHandler) {
+    public func get_ton_proxy_listening_port() -> UInt16 {
+        return apivpn_get_ton_proxy_listening_port()
+    }
+    
+    public func set_ton_proxy_address(_ addr: String) {
+        apivpn_set_ton_proxy_address(addr)
+    }
+    
+    public func set_is_use_ton_proxy(_ v: Bool) {
+        apivpn_set_is_use_ton_proxy(v)
+    }
+    
+    public func set_api_server(_ url: String) {
+        apivpn_set_api_server(url)
+    }
+    
+    public func initialize(_ appToken: String, _ dataDir: String, _ completionHandler: @escaping VpnInitCompletionHandler) {
         let bundle = Bundle(for: Self.self)
         let bundlePath = bundle.resourcePath!
         setenv("LOG_CONSOLE_OUT", "true", 1)
@@ -132,7 +193,7 @@ public class ApiVpn {
         setenv("SSL_CERT_FILE", bundle.path(forResource: "cacert", ofType: ".pem"), 1)
 
         DispatchQueue.global().async {
-            let err = apivpn_init(appToken, apiServer, dataDir)
+            let err = apivpn_init(appToken, dataDir)
             if err == 0 {
                 completionHandler(nil)
             } else {
